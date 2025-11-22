@@ -293,12 +293,42 @@ uv tree  # Show dependency tree
 
 ## AI Assistant Integration
 
-If using Claude Code or similar AI assistants, install the `uv-python` skill to teach them to automatically use UV commands:
+### Claude Code Skill
 
-- Skill location: `~/.claude/skills/uv-python/`
-- The skill teaches AI to use `uv run` instead of `python`
-- Works with projects in any location
-- See the `uv-python` skill documentation for details
+This repo includes a Claude Code skill that teaches Claude to automatically use UV commands. When installed, Claude will:
+
+- Use `uv run python` instead of plain `python`
+- Use `uv add` instead of `pip install`
+- Use `uv run pytest` instead of plain `pytest`
+- Apply UV workflow to any Python project in any location
+
+#### Installation
+
+```bash
+# Create skills directory if it doesn't exist
+mkdir -p ~/.claude/skills/
+
+# Copy the skill from this repo
+cp -r skills/uv-python ~/.claude/skills/
+
+# Verify installation
+ls ~/.claude/skills/uv-python/SKILL.md
+```
+
+#### Usage
+
+Once installed, Claude Code will automatically:
+- Translate Python commands to UV equivalents
+- Use `uv run` for all script execution
+- Initialize UV in projects when needed
+- Follow the UV workflow described in this guide
+
+#### Skill Details
+
+- **Location**: `skills/uv-python/SKILL.md`
+- **Format**: Claude Code skill format with metadata and instructions
+- **Scope**: Applies to any Python project in any directory
+- **Auto-activates**: Triggers when working with Python code
 
 ## Quick Reference
 
