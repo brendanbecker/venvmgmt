@@ -330,6 +330,38 @@ Once installed, Claude Code will automatically:
 - **Scope**: Applies to any Python project in any directory
 - **Auto-activates**: Triggers when working with Python code
 
+### Codex Skill
+
+This repo also includes a Codex-compatible version of the UV Python skill for use with Codex AI assistants.
+
+#### Installation
+
+```bash
+# Create Codex skills directory if it doesn't exist
+mkdir -p ~/.codex/skills/
+
+# Copy the skill from this repo
+cp -r skills/codex-uv-python ~/.codex/skills/uv-python
+
+# Verify installation
+ls ~/.codex/skills/uv-python/SKILL.md
+```
+
+#### Usage
+
+Once installed, Codex will automatically:
+- Translate Python commands to UV equivalents
+- Use `uv run` for all script execution
+- Initialize UV in projects when needed
+- Follow the UV workflow described in this guide
+
+#### Skill Details
+
+- **Location**: `skills/codex-uv-python/SKILL.md`
+- **Format**: Codex skill format with YAML frontmatter
+- **Scope**: Universal Python workflow for any project location
+- **Complements**: Works alongside other UV-related skills for workspace-based development
+
 ## Quick Reference
 
 ```bash
